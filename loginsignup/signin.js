@@ -56,7 +56,7 @@ export default class signin extends Component {
       <View style={styles1.AppStyle}>
 
           <View style={styles1.stretch1}>  
-               <Image style={styles1.stretch2} source={require('./AQALogo.jpg')} />
+               <Image style={styles1.stretch2} source={require('./QuizAppLogo.png')} />
           </View> 
 
           <View style={styles1.TextInView}>
@@ -96,14 +96,14 @@ export default class signin extends Component {
                     style={styles1.Button} 
                     onPress={()=>{this.props.navigation.navigate("SignUpPage")}}
                     >
-                    <Text style={styles1.text}>SignUp Here</Text>
+                    <Text style={styles1.text}>SignUp</Text>
                   </Pressable>   
                
                 </View>
 
                 <View style={styles1.ButtonView}>
                    <Pressable
-                    style={styles1.Button} 
+                    style={styles1.Button2} 
                     onPress={()=>{this.props.navigation.navigate("NotDefined")}}
                     >
                     <Text style={styles1.text}>Admin Panel LogIn</Text>
@@ -134,7 +134,7 @@ const styles1 = StyleSheet.create({
         margin: 20,  
         flexDirection: 'row',  
         justifyContent: 'space-between'  
-    }  ,
+    },
     
     stretch: {
         justifyContent: 'center',
@@ -151,10 +151,10 @@ const styles1 = StyleSheet.create({
     },
     
     stretch2: {
-        width: 400,
-        height: 160,
+        width: 320,
+        height: 200,
         margin: 10,
-        resizeMode: 'stretch',
+        resizeMode: '',
     },
     
     input: {
@@ -223,23 +223,24 @@ const styles1 = StyleSheet.create({
     AppStyle:{
       flex: 1,
       padding: 20,
-      marginTop: 6,
+      marginTop: 0,
       paddingBottom: 3,
-      width: '100%'
+      width: '100%',
+      backgroundColor: 'yellow',
     },
 
 
 
       ButtonView: {
          marginTop: 10,
-         alignItems: 'center'
+         alignItems: 'center',
       },
      
       Button: {
        // marginTop: 30,
        // marginBottom: 20,
        borderRadius: 1,
-       height: 30,
+       height: 50,
        backgroundColor: 'green',
        color: 'white',
        justifyContent: 'center', 
@@ -247,6 +248,20 @@ const styles1 = StyleSheet.create({
        width: '80%',
        //width: 80,
       },
+
+      Button2: {
+        // marginTop: 30,
+        // marginBottom: 20,
+        borderRadius: 1,
+        marginTop: 100,
+        height: 50,
+        backgroundColor: 'green',
+        color: 'white',
+        justifyContent: 'center', 
+        alignItems: 'center',  
+        width: '80%',
+        //width: 80,
+       },
     
       textInput:{
         flex: 1,
