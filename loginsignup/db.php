@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$db_name = '';
+$db_name = '6129compmobileeducationapp';
 
     $connect_db = mysqli_connect($host, $username, $password, $db_name);	// connection to database
 
