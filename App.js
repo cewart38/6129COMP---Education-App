@@ -9,7 +9,7 @@ import Home from './loginsignup/homepage';
 import SignIn from './loginsignup/signin.js';
 import SignUp from './loginsignup/signup.js';
 //import signin from './loginsignup/signin';
-import { Quiz } from './src/screens'
+import Quiz from './src/screens/Quiz.js';
 
 export default function App() {
   return (
@@ -22,6 +22,7 @@ const NavGuide = createStackNavigator({
   SignInPage: {screen: SignIn,},
   SignUpPage: {screen: SignUp,},
   HomePage: {screen: Home,},
+  Quiz: {screen: Quiz,},
 
 });
 
