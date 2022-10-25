@@ -100,17 +100,7 @@ export default class signin extends Component {
                   </Pressable>   
                
                 </View>
-
-                <View style={styles1.ButtonView}>
-                   <Pressable
-                    style={styles1.Button} 
-                    onPress={()=>{this.props.navigation.navigate("Quiz")}}
-                    >
-                    <Text style={styles1.text}>BeginQuiz</Text>
-                  </Pressable>   
-               
-                </View>
-
+                
                 <View style={styles1.ButtonView}>
                    <Pressable
                     style={styles1.Button2} 
