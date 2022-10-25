@@ -10,7 +10,12 @@ import SignIn from './loginsignup/signin.js';
 import SignUp from './loginsignup/signup.js';
 import AdminSignIn from './loginsignup/adminsignin.js';
 //import signin from './loginsignup/signin';
+<<<<<<< HEAD
 import AdminDashboard from './loginsignup/admindashboard.js';
+=======
+import Quiz from './src/screens/Quiz.js';
+
+>>>>>>> 1cedc7cffb48f302e339055fcf50022d97282a42
 export default function App() {
   return (
     <Navigator />
@@ -22,8 +27,12 @@ const NavGuide = createStackNavigator({
   SignInPage: {screen: SignIn,},
   SignUpPage: {screen: SignUp,},
   HomePage: {screen: Home,},
+<<<<<<< HEAD
   AdminSignInPage: {screen: AdminSignIn,},
   AdminDashboardPage: {screen: AdminDashboard,},
+=======
+  Quiz: {screen: Quiz,},
+>>>>>>> 1cedc7cffb48f302e339055fcf50022d97282a42
 
 });
 
