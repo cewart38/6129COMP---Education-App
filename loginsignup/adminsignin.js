@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, StyleSheet, View, Image, Pressable, Linking, Text, TextInput, TouchableOpacity, Button} from 'react-native';
 
-export default class signin extends Component {
+export default class adminsignin extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +33,7 @@ export default class signin extends Component {
       };
 
         // IMPORTANT IMPORTANT --> REPLACE THE FOLLOWING LINE WITH YOUR IP ADDRESS AND LOCATION TO THE SIGNIN PAGE
-        fetch("http://192.168.0.232/6129COMP/6129COMP---Education-App/loginsignup/signin.php",{    
+        fetch("http://192.168.0.232/6129COMP/6129COMP---Education-App/loginsignup/adminsignin.php",{    
         method: 'POST',
         headers: headers,
         body: JSON.stringify(Data)
@@ -41,8 +41,8 @@ export default class signin extends Component {
       .then((Response)=>Response.json())
       .then((Response)=>{
        alert(Response[0].Message)
-        if (Response[0].Message == "Logged In Successfully") {
-          this.props.navigation.navigate("HomePage");
+        if (Response[0].Message == "Admin - Logged In Successfully") {
+          this.props.navigation.navigate("AdminDashboardPage");
         }
       })
       .catch((error)=>{console.error("ERROR:" + error);})
@@ -61,7 +61,7 @@ export default class signin extends Component {
 
           <View style={styles1.TextInView}>
             <TextInput
-                placeholder="Enter Email"
+                placeholder="Enter Admin Email"
                 style={styles1.textInput}
                 onChangeText={email=>this.setState({email})}
               />
@@ -69,7 +69,7 @@ export default class signin extends Component {
 
          <View style={styles1.TextInView}>
               <TextInput
-                placeholder="Enter Password"
+                placeholder="Enter Admin Password"
                 style={styles1.textInput}
                 secureTextEntry={this.state.secureTextEntry ? true : false}
                 onChangeText={password=>this.setState({password})}
@@ -90,28 +90,6 @@ export default class signin extends Component {
                   </Pressable>
 
                 </View> 
-
-                <View style={styles1.ButtonView}>
-                   <Pressable
-                    style={styles1.Button} 
-                    onPress={()=>{this.props.navigation.navigate("SignUpPage")}}
-                    >
-                    <Text style={styles1.text}>SignUp</Text>
-                  </Pressable>   
-               
-                </View>
-
-                <View style={styles1.ButtonView}>
-                   <Pressable
-                    style={styles1.Button2} 
-                    onPress={()=>{this.props.navigation.navigate("AdminSignInPage")}}
-                    >
-                    <Text style={styles1.text}>Admin Panel LogIn</Text>
-                  </Pressable>   
-               
-                </View>
-
-
                 
       </View>
     );

@@ -8,8 +8,9 @@ import Home from './loginsignup/homepage';
 //import ButtonBasics from './loginsignup/homepage.js';
 import SignIn from './loginsignup/signin.js';
 import SignUp from './loginsignup/signup.js';
+import AdminSignIn from './loginsignup/adminsignin.js';
 //import signin from './loginsignup/signin';
-
+import AdminDashboard from './loginsignup/admindashboard.js';
 export default function App() {
   return (
     <Navigator />
@@ -21,6 +22,8 @@ const NavGuide = createStackNavigator({
   SignInPage: {screen: SignIn,},
   SignUpPage: {screen: SignUp,},
   HomePage: {screen: Home,},
+  AdminSignInPage: {screen: AdminSignIn,},
+  AdminDashboardPage: {screen: AdminDashboard,},
 
 });
 
