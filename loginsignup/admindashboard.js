@@ -1,5 +1,5 @@
 import React, { Component } from 'react';  
-import { Alert, AppRegistry, Button, StyleSheet, View, Image, TextInput, Text, Linking, Pressable} from 'react-native'; 
+import { Alert, AppRegistry, Button, StyleSheet, View, Image, TextInput, Text, Linking} from 'react-native'; 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ButtonBasics extends Component {  
@@ -29,9 +29,7 @@ export default class ButtonBasics extends Component {
  
             <View style={styles.container}>  
                 <View style={styles.AppBar5}>
-                   <Text style={styles.AppBar2}>Autism Quiz App</Text>
-                   <Text style={styles.AppBar2}>Welcome!</Text>
-                   <Text style={styles.AppBar4}>To the Autusm Quiz App for 6130COMP - Contemporary Software Development
+                   <Text style={styles.AppBar4}>Admin Panel
                    </Text>
                 </View>
                 
@@ -43,28 +41,8 @@ export default class ButtonBasics extends Component {
                     />  
                 </View> 
 
-                <View style={styles.ButtonView}>
-                   <Pressable
-                    style={styles.Button} 
-                    onPress={()=>{this.props.navigation.navigate("Undefined")}}
-                    >
-                    <Text style={styles.text}>Take Quiz</Text>
-                  </Pressable>   
-               
-                </View>
-
-                <View style={styles.ButtonView}>
-                   <Pressable
-                    style={styles.Button} 
-                    onPress={()=>{this.props.navigation.navigate("Undefined")}}
-                    >
-                    <Text style={styles.text}>View Scores</Text>
-                  </Pressable>   
-               
-                </View>
-
                 <View style={styles.AppBar1}>
-                   <Text style={styles.AppBar2}>6130COMP - Test </Text>
+                   <Text style={styles.AppBar2}>6130COMP - Admin Panel </Text>
                 </View>
             </View>  
         );  

@@ -241,9 +241,10 @@ const styles1 = StyleSheet.create({
     AppStyle:{
       flex: 1,
       padding: 20,
-      marginTop: 6,
+      marginTop: 0,
       paddingBottom: 3,
-      width: '100%'
+      width: '100%',
+      backgroundColor: 'yellow'
 
     },
 
@@ -263,7 +264,7 @@ const styles1 = StyleSheet.create({
     Button: {
        color: 'white',
        backgroundColor: 'green',
-       height: 35,
+       height: 60,
        justifyContent: 'center', 
        alignItems: 'center', 
        width: '80%',
