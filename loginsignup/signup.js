@@ -48,6 +48,7 @@ export default class signup extends Component {
 
       // IMPORTANT IMPORTANT --> REPLACE THE FOLLOWING LINE WITH YOUR IP ADDRESS AND LOCATION TO THE SIGNUP PAGE
   fetch("http://192.168.0.232/6129COMP/6129COMP---Education-App/loginsignup/signup.php", {  
+//    fetch("http://sql8.freemysqlhosting.net/https://github.com/cewart38/6129COMP---Education-App/blob/master/loginsignup/signup.php", {  
         method:'POST',
         headers:headers,
         body: JSON.stringify(Data) //converts given data into JSON
@@ -262,6 +263,7 @@ const styles1 = StyleSheet.create({
     },
      
     Button: {
+      borderRadius: 25,
        color: 'white',
        backgroundColor: 'green',
        height: 60,

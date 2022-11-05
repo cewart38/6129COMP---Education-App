@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Alert, AppRegistry, StyleSheet, View, Image, Pressable, Linking, Text, TextInput, TouchableOpacity, Button} from 'react-native';
+import { Alert, AppRegistry, StyleSheet, View, Image, Pressable, Linking, Text, TextInput, TouchableOpacity, Button, } from 'react-native';
+//import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default class signin extends Component {
   constructor(props) {
@@ -9,6 +12,17 @@ export default class signin extends Component {
       password : '',
       secureTextEntry : true,
     };
+  }
+
+  // check if the user is already logged in or not
+  componentDidMount() {
+    //Get user email from local storage
+    AsyncStorage.getItem("Email").then(data => {
+      if (data) {
+        //if user email has data -> email
+        this.props.navigation.navigate("HomePage", {email: JSON.parse(data) }); // Navigate to home page
+      }
+    })
   }
 
 
@@ -34,6 +48,7 @@ export default class signin extends Component {
 
         // IMPORTANT IMPORTANT --> REPLACE THE FOLLOWING LINE WITH YOUR IP ADDRESS AND LOCATION TO THE SIGNIN PAGE
         fetch("http://192.168.0.232/6129COMP/6129COMP---Education-App/loginsignup/signin.php",{    
+//        fetch("http://sql8.freemysqlhosting.net/https://github.com/cewart38/6129COMP---Education-App/blob/master/loginsignup/signin.js",{    
         method: 'POST',
         headers: headers,
         body: JSON.stringify(Data)
@@ -42,7 +57,8 @@ export default class signin extends Component {
       .then((Response)=>{
        alert(Response[0].Message)
         if (Response[0].Message == "Logged In Successfully") {
-          this.props.navigation.navigate("HomePage");
+          AsyncStorage.setItem("Email", JSON.stringify(Email));
+          this.props.navigation.navigate("HomePage", {Email: Email});
         }
       })
       .catch((error)=>{console.error("ERROR:" + error);})
@@ -86,7 +102,7 @@ export default class signin extends Component {
                     style={styles1.Button} 
                     onPress={()=>{this.RegDataInDB()}}
                     >
-                    <Text style={styles1.text}>LogIn</Text>
+                    <Text style={styles1.text}>LOGIN</Text>
                   </Pressable>
 
                 </View> 
@@ -96,7 +112,7 @@ export default class signin extends Component {
                     style={styles1.Button} 
                     onPress={()=>{this.props.navigation.navigate("SignUpPage")}}
                     >
-                    <Text style={styles1.text}>SignUp</Text>
+                    <Text style={styles1.text}>SIGN UP</Text>
                   </Pressable>   
                
                 </View>
@@ -106,7 +122,7 @@ export default class signin extends Component {
                     style={styles1.Button2} 
                     onPress={()=>{this.props.navigation.navigate("AdminSignInPage")}}
                     >
-                    <Text style={styles1.text}>Admin Panel LogIn</Text>
+                    <Text style={styles1.text}>ADMIN PANEL LOGIN</Text>
                   </Pressable>   
                
                 </View>
@@ -239,9 +255,9 @@ const styles1 = StyleSheet.create({
       Button: {
        // marginTop: 30,
        // marginBottom: 20,
-       borderRadius: 1,
+       borderRadius: 25,
        height: 50,
-       backgroundColor: 'green',
+       backgroundColor: "#268001",
        color: 'white',
        justifyContent: 'center', 
        alignItems: 'center',  
@@ -252,10 +268,10 @@ const styles1 = StyleSheet.create({
       Button2: {
         // marginTop: 30,
         // marginBottom: 20,
-        borderRadius: 1,
+        borderRadius: 25,
         marginTop: 100,
         height: 50,
-        backgroundColor: 'green',
+        backgroundColor: "#268001",
         color: 'white',
         justifyContent: 'center', 
         alignItems: 'center',  
