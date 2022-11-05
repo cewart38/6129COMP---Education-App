@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$db_name = '6129compmobileeducationapp';
+$host = 'sql8.freemysqlhosting.net';
+$username = 'sql8527528';
+$password = 'D4KKUtafZk';
+$db_name = 'sql8527528';
 
 //$host = 'sql8.freemysqlhosting.net';
 //$username = 'sql8527528';
