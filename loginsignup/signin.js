@@ -33,7 +33,7 @@ export default class signin extends Component {
       };
 
         // IMPORTANT IMPORTANT --> REPLACE THE FOLLOWING LINE WITH YOUR IP ADDRESS AND LOCATION TO THE SIGNIN PAGE
-        fetch("http://192.168.0.232/6129COMP/6129COMP---Education-App/loginsignup/signin.php",{    
+        fetch("http://192.168.0.197/AutismEducation/loginsignup/signin.php",{    
         method: 'POST',
         headers: headers,
         body: JSON.stringify(Data)
@@ -104,7 +104,7 @@ export default class signin extends Component {
                 <View style={styles1.ButtonView}>
                    <Pressable
                     style={styles1.Button} 
-                    onPress={()=>{this.props.navigation.navigate("Quiz")}}
+                    onPress={()=>{this.props.navigation.navigate("QuizPage")}}
                     >
                     <Text style={styles1.text}>BeginQuiz</Text>
                   </Pressable>   

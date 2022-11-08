@@ -47,7 +47,7 @@ export default class signup extends Component {
       };
 
       // IMPORTANT IMPORTANT --> REPLACE THE FOLLOWING LINE WITH YOUR IP ADDRESS AND LOCATION TO THE SIGNUP PAGE
-  fetch("http://192.168.0.232/6129COMP/6129COMP---Education-App/loginsignup/signup.php", {  
+  fetch("http://192.168.0.197/AutismEducation/loginsignup/signin.php", {  
         method:'POST',
         headers:headers,
         body: JSON.stringify(Data) //converts given data into JSON
